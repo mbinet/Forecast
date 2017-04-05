@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Forecast" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,78 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJw-cq-tge">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="166"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="OaH-fr-RvA"/>
+                                </connections>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8aD-NT-VQr">
+                                <rect key="frame" x="0.0" y="174" width="375" height="493"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="meteoCell" id="xxP-mx-yIY" customClass="MeteoTableViewCell" customModule="Forecast" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xxP-mx-yIY" id="eTj-Lh-8F2">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zrl-mK-Inu">
+                                                    <rect key="frame" x="8" y="12" width="160" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="160" id="rtX-2U-poo"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1kk-8p-hyk">
+                                                    <rect key="frame" x="176" y="0.0" width="191" height="44"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1kk-8p-hyk" firstAttribute="leading" secondItem="Zrl-mK-Inu" secondAttribute="trailing" constant="8" id="BjW-Ik-qz9"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Zrl-mK-Inu" secondAttribute="bottom" constant="3" id="DJS-di-5Zu"/>
+                                                <constraint firstAttribute="trailing" secondItem="1kk-8p-hyk" secondAttribute="trailing" constant="8" id="KwO-qg-NEk"/>
+                                                <constraint firstItem="Zrl-mK-Inu" firstAttribute="top" secondItem="eTj-Lh-8F2" secondAttribute="topMargin" constant="4" id="Nfl-gd-7n5"/>
+                                                <constraint firstItem="1kk-8p-hyk" firstAttribute="top" secondItem="eTj-Lh-8F2" secondAttribute="top" id="SN4-Tr-ccc"/>
+                                                <constraint firstAttribute="bottom" secondItem="1kk-8p-hyk" secondAttribute="bottom" id="gcc-ax-GZZ"/>
+                                                <constraint firstItem="Zrl-mK-Inu" firstAttribute="leading" secondItem="eTj-Lh-8F2" secondAttribute="leadingMargin" id="nEE-2C-FXW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="hourLabel" destination="Zrl-mK-Inu" id="n2H-Wk-Sra"/>
+                                            <outlet property="textView" destination="1kk-8p-hyk" id="K83-jP-cej"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8aD-NT-VQr" firstAttribute="top" secondItem="aJw-cq-tge" secondAttribute="bottom" constant="8" symbolic="YES" id="5pN-6v-9IB"/>
+                            <constraint firstAttribute="trailing" secondItem="8aD-NT-VQr" secondAttribute="trailing" id="Bh4-08-ftn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8aD-NT-VQr" secondAttribute="bottom" id="J4Z-Km-wXu"/>
+                            <constraint firstItem="aJw-cq-tge" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="QbY-ic-keU"/>
+                            <constraint firstAttribute="trailing" secondItem="aJw-cq-tge" secondAttribute="trailing" id="X4h-Kz-vpH"/>
+                            <constraint firstItem="8aD-NT-VQr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aMd-E3-5L3"/>
+                            <constraint firstItem="aJw-cq-tge" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rSr-GQ-LMa"/>
+                            <constraint firstItem="aJw-cq-tge" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sas-xW-WVK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="map" destination="aJw-cq-tge" id="waP-Hs-6Ae"/>
+                        <outlet property="tableView" destination="8aD-NT-VQr" id="5zO-t2-9ov"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="93.599999999999994" y="38.23088455772114"/>
         </scene>
     </scenes>
 </document>
