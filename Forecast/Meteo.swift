@@ -9,15 +9,17 @@
 import Foundation
 
 struct Meteo: CustomStringConvertible {
-    let hour : Date
+    let hour : String
     let text : String
+    let icon : String
     
-    init(h: Date, t: String) {
-        self.hour = h
-        self.text = t
+    init(h: String, t: String, i: String) {
+        self.hour = "\(h)h"
+        self.text = "\(t)°"
+        self.icon = i
     }
     
     var description: String {
-        return "(\(hour), \(text))"
+        return "(\(hour), \(text), \(icon))"
     }
 }

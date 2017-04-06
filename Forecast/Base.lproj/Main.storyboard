@@ -45,30 +45,39 @@
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="rtX-2U-poo"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1kk-8p-hyk">
-                                                    <rect key="frame" x="176" y="0.0" width="191" height="44"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybs-YQ-rjh">
+                                                    <rect key="frame" x="325" y="12" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KM0-wP-0Pn">
+                                                    <rect key="frame" x="167" y="0.0" width="49" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="k9J-nJ-t6O"/>
+                                                        <constraint firstAttribute="width" constant="30" id="orj-kC-psj"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="1kk-8p-hyk" firstAttribute="leading" secondItem="Zrl-mK-Inu" secondAttribute="trailing" constant="8" id="BjW-Ik-qz9"/>
+                                                <constraint firstItem="Ybs-YQ-rjh" firstAttribute="top" secondItem="eTj-Lh-8F2" secondAttribute="topMargin" constant="4" id="2qj-Rd-Vok"/>
+                                                <constraint firstItem="Ybs-YQ-rjh" firstAttribute="trailing" secondItem="eTj-Lh-8F2" secondAttribute="trailingMargin" id="3Kz-Ow-Bg2"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Zrl-mK-Inu" secondAttribute="bottom" constant="3" id="DJS-di-5Zu"/>
-                                                <constraint firstAttribute="trailing" secondItem="1kk-8p-hyk" secondAttribute="trailing" constant="8" id="KwO-qg-NEk"/>
                                                 <constraint firstItem="Zrl-mK-Inu" firstAttribute="top" secondItem="eTj-Lh-8F2" secondAttribute="topMargin" constant="4" id="Nfl-gd-7n5"/>
-                                                <constraint firstItem="1kk-8p-hyk" firstAttribute="top" secondItem="eTj-Lh-8F2" secondAttribute="top" id="SN4-Tr-ccc"/>
-                                                <constraint firstAttribute="bottom" secondItem="1kk-8p-hyk" secondAttribute="bottom" id="gcc-ax-GZZ"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Ybs-YQ-rjh" secondAttribute="bottom" constant="3" id="ZuG-Qz-pq0"/>
+                                                <constraint firstItem="KM0-wP-0Pn" firstAttribute="leading" secondItem="eTj-Lh-8F2" secondAttribute="leading" constant="167" id="fug-qR-Fwv"/>
                                                 <constraint firstItem="Zrl-mK-Inu" firstAttribute="leading" secondItem="eTj-Lh-8F2" secondAttribute="leadingMargin" id="nEE-2C-FXW"/>
+                                                <constraint firstItem="KM0-wP-0Pn" firstAttribute="centerY" secondItem="Ybs-YQ-rjh" secondAttribute="centerY" id="uBP-M9-ZsE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="hourLabel" destination="Zrl-mK-Inu" id="n2H-Wk-Sra"/>
-                                            <outlet property="textView" destination="1kk-8p-hyk" id="K83-jP-cej"/>
+                                            <outlet property="icon" destination="KM0-wP-0Pn" id="2q1-9c-J5o"/>
+                                            <outlet property="tempLabel" destination="Ybs-YQ-rjh" id="2S7-Gc-dlz"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

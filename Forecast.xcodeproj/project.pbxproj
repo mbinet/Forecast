@@ -19,6 +19,11 @@
 		EC0205DF1E95343900EF2408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC0205DE1E95343900EF2408 /* CoreLocation.framework */; };
 		EC0205E11E9552FD00EF2408 /* Meteo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC0205E01E9552FD00EF2408 /* Meteo.swift */; };
 		EC5CBF981E95790700C8CDAF /* MeteoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC5CBF971E95790700C8CDAF /* MeteoTableViewCell.swift */; };
+		EC8E61751E9658AB00AB8AA0 /* clear-day.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8E61741E9658AB00AB8AA0 /* clear-day.png */; };
+		EC8E61771E9658BE00AB8AA0 /* wind.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8E61761E9658BE00AB8AA0 /* wind.png */; };
+		EC8E61791E9658C600AB8AA0 /* clear-night.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8E61781E9658C600AB8AA0 /* clear-night.png */; };
+		EC8E617B1E9658C900AB8AA0 /* partly-cloudy-night.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8E617A1E9658C900AB8AA0 /* partly-cloudy-night.png */; };
+		EC8E617D1E9658CF00AB8AA0 /* partly-cloudy-day.png in Resources */ = {isa = PBXBuildFile; fileRef = EC8E617C1E9658CF00AB8AA0 /* partly-cloudy-day.png */; };
 		EDCE3FFA71541E40E94A3CEA /* Pods_ForecastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B8650591B782116A3A9957A /* Pods_ForecastTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +70,11 @@
 		EC0205DE1E95343900EF2408 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		EC0205E01E9552FD00EF2408 /* Meteo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meteo.swift; sourceTree = "<group>"; };
 		EC5CBF971E95790700C8CDAF /* MeteoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeteoTableViewCell.swift; sourceTree = "<group>"; };
+		EC8E61741E9658AB00AB8AA0 /* clear-day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-day.png"; sourceTree = "<group>"; };
+		EC8E61761E9658BE00AB8AA0 /* wind.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wind.png; sourceTree = "<group>"; };
+		EC8E61781E9658C600AB8AA0 /* clear-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clear-night.png"; sourceTree = "<group>"; };
+		EC8E617A1E9658C900AB8AA0 /* partly-cloudy-night.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partly-cloudy-night.png"; sourceTree = "<group>"; };
+		EC8E617C1E9658CF00AB8AA0 /* partly-cloudy-day.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "partly-cloudy-day.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +151,7 @@
 				EC0205B31E952A2800EF2408 /* Main.storyboard */,
 				EC0205B61E952A2800EF2408 /* Assets.xcassets */,
 				EC0205B81E952A2800EF2408 /* LaunchScreen.storyboard */,
+				EC8E61711E96565400AB8AA0 /* Images */,
 				EC0205BB1E952A2800EF2408 /* Info.plist */,
 			);
 			path = Forecast;
@@ -173,6 +184,18 @@
 				35426906A78665E68F8059EF /* Pods_ForecastUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC8E61711E96565400AB8AA0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EC8E61761E9658BE00AB8AA0 /* wind.png */,
+				EC8E617A1E9658C900AB8AA0 /* partly-cloudy-night.png */,
+				EC8E617C1E9658CF00AB8AA0 /* partly-cloudy-day.png */,
+				EC8E61781E9658C600AB8AA0 /* clear-night.png */,
+				EC8E61741E9658AB00AB8AA0 /* clear-day.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,7 +316,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC0205BA1E952A2800EF2408 /* LaunchScreen.storyboard in Resources */,
+				EC8E61771E9658BE00AB8AA0 /* wind.png in Resources */,
+				EC8E617B1E9658C900AB8AA0 /* partly-cloudy-night.png in Resources */,
+				EC8E61751E9658AB00AB8AA0 /* clear-day.png in Resources */,
+				EC8E617D1E9658CF00AB8AA0 /* partly-cloudy-day.png in Resources */,
 				EC0205B71E952A2800EF2408 /* Assets.xcassets in Resources */,
+				EC8E61791E9658C600AB8AA0 /* clear-night.png in Resources */,
 				EC0205B51E952A2800EF2408 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

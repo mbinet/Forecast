@@ -10,14 +10,16 @@ import UIKit
 
 class MeteoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var hourLabel: UILabel!
+    @IBOutlet weak var icon: UIImageView!
     
     var meteo : (Meteo)? {
         didSet {
             if let m = meteo {
-                hourLabel?.text = String(describing: m.hour)
-                textView?.text = m.text
+                hourLabel?.text = m.hour
+                tempLabel?.text = m.text
+                icon.image = UIImage(named: String("\(m.icon).png"))
             }
         }
     }

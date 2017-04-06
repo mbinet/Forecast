@@ -20,6 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
             tableView.dataSource = self
         }
     }
+    
     let locationManager = CLLocationManager()
     var tab : [Meteo] = []
     
@@ -30,14 +31,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "meteoCell") as! MeteoTableViewCell
         cell.meteo = self.tab[indexPath.row]
-//        cell?.textLabel?.text = "23:12" //Data.films[indexPath.row].0
-//        cell?.detailTextLabel?.text = "Il fait beau" // String(Data.films[indexPath.row].1)
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         print("hello");
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
@@ -66,17 +64,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
 
     func getWeather( lat: Double, long: Double) {
         let client = DarkSkyClient(apiKey: "ca559473d89ce229c5f07067b42730c8")
+        client.units = .si
         client.getForecast(latitude: lat, longitude: long) { result in
             switch result {
-            case .success(let currentForecast, let requesstMetadata):
-                let ok = currentForecast.hourly!
-                for p in ok.data {
-                    print("ah \(p.time)  |  \(p.summary)  |  \(p.icon)")
-                    let meteo = Meteo(h: p.time, t: p.summary!)
+            case .success(let currentForecast, _):
+                let hourly = currentForecast.hourly!
+                for p in hourly.data {
+                    let hour = Calendar.current.component(.hour, from: p.time)
+                    print("\(hour)h  |  \(p.temperature!)  |  \(p.icon!.rawValue)")
+                    let meteo = Meteo(h: String(hour), t: String(describing: Int(p.temperature!)), i: p.icon!.rawValue)
                     self.handleMeteo(meteo: meteo)
                 }
             case .failure(let error):
-                print("couldnt get forecast")
+                print("couldnt get forecast : \(error)")
             }
         }
     }
@@ -86,7 +86,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         
-        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
         let myLat = location.coordinate.latitude
         let myLong = location.coordinate.longitude
         let myLocation:CLLocationCoordinate2D = CLLocationCoordinate2DMake(myLat, myLong)
@@ -95,8 +95,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
         
         locationManager.stopUpdatingLocation()
         getWeather(lat: myLat, long: myLong)
-        
-        
         
         self.map.showsUserLocation = true
     }
